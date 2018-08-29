@@ -53,6 +53,7 @@ public class MovieApp {
 			menu(input);
 			break;
 		case 4:
+			deleteMovie(input);
 			menu(input);
 			break;
 		case 5:
@@ -97,5 +98,18 @@ public class MovieApp {
 			if(movie.getId() == id)
 			System.out.println(movie);
 		}
+	}
+	
+	private static void deleteMovie(Scanner input) {
+		System.out.println("Please enter the id of the movie you want to delete: ");
+		Movie currentMovie = null;
+		int id = input.nextInt();
+		for (Movie movie: movies) {
+			if(movie.getId() == id) {
+				currentMovie = movie;
+				System.out.println(" '" + movie.getTitle() + "' has been removed");
+			}
+		}
+		movies.remove(currentMovie);
 	}
 }
