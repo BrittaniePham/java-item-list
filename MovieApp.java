@@ -24,6 +24,7 @@ public class MovieApp {
 	}
 	
 	private static void menu(Scanner input) {
+		System.out.println();
 		System.out.println("1. Display all movies");
 		System.out.println("2. Add a movie");
 		System.out.println("3. Find a movie");
@@ -44,6 +45,7 @@ public class MovieApp {
 			break;
 		case 2:
 			addMovie();
+			System.out.println("Your movie has successfully been added");
 			menu(input);
 			break;
 		case 3:
@@ -83,6 +85,7 @@ public class MovieApp {
 		int year = input2.nextInt();
 		Movie userMovie = new Movie(name, genre, year);
 		movies.add(userMovie); 
+		System.out.println();
 		
 	}
 }

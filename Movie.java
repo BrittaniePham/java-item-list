@@ -7,14 +7,14 @@ public class Movie {
 	private String genre;
 	private int year;
 	private int id;
-	private int count = 1;
+	private static int count = 1;
 	
 	//constructor
 	public Movie(String title, String genre, int year) {
 		this.title = title;
 		this.genre = genre;
 		this.year = year;
-		this.id = count;
+		this.id = getCount();
 		count++;
 	}
 
@@ -48,6 +48,10 @@ public class Movie {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public static int getCount() {
+		return count;
 	}
 	
 	@Override
