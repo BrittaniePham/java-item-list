@@ -49,6 +49,7 @@ public class MovieApp {
 			menu(input);
 			break;
 		case 3:
+			findMovie(input);
 			menu(input);
 			break;
 		case 4:
@@ -87,5 +88,14 @@ public class MovieApp {
 		movies.add(userMovie); 
 		System.out.println();
 		
+	}
+	
+	private static void findMovie(Scanner input) {
+		System.out.println("Please enter the id of the movie you want to find: ");
+		int id = input.nextInt();
+		for (Movie movie: movies) {
+			if(movie.getId() == id)
+			System.out.println(movie);
+		}
 	}
 }
