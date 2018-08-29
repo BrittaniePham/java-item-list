@@ -57,13 +57,15 @@ public class MovieApp {
 			menu(input);
 			break;
 		case 5:
+			movieCount();
 			menu(input);
 			break;
 		case 6:
 			System.out.println("goodbye");
 			break;
 		default:
-			System.out.println("invalid choice, try again");
+			System.out.println("Invalid choice, try again");
+			System.out.println();
 			selection(input, movies);
 		}
 	}
@@ -108,8 +110,18 @@ public class MovieApp {
 			if(movie.getId() == id) {
 				currentMovie = movie;
 				System.out.println(" '" + movie.getTitle() + "' has been removed");
+				break;
 			}
+//			} else if(movie.getId() != id) {
+//				System.out.println("The id " + id + " could not be found");
+////				menu(input);
+//				break;
+//			}
 		}
 		movies.remove(currentMovie);
+	}
+	
+	private static void movieCount() {
+		System.out.println("Number of movies: " + Movie.getCount());
 	}
 }

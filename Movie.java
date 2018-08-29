@@ -7,15 +7,15 @@ public class Movie {
 	private String genre;
 	private int year;
 	private int id;
-	private static int count = 1;
+	private static int count = 0;
 	
 	//constructor
 	public Movie(String title, String genre, int year) {
 		this.title = title;
 		this.genre = genre;
 		this.year = year;
-		this.id = getCount();
 		count++;
+		this.id = getCount();
 	}
 
 	public String getTitle() {
