@@ -45,7 +45,6 @@ public class MovieApp {
 			break;
 		case 2:
 			addMovie();
-			System.out.println("Your movie has successfully been added");
 			menu(input);
 			break;
 		case 3:
@@ -90,6 +89,7 @@ public class MovieApp {
 		Movie userMovie = new Movie(name, genre, year);
 		movies.add(userMovie); 
 		System.out.println();
+		System.out.println("The movie \"" + userMovie.getTitle() + "\" has successfully been added");
 		
 	}
 	
