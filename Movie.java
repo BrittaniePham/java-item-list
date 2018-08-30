@@ -38,6 +38,10 @@ public class Movie {
 		return count;
 	}
 	
+	public static void decreaseCount() {
+		count--;
+	}
+	
 	@Override
 	public String toString() {
 		return getTitle() + " - " + getGenre() + " - released in " + getYear() + " - id: " + getId();

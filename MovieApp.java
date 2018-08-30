@@ -111,6 +111,7 @@ public class MovieApp {
 			if(movie.getId() == id) {
 				currentMovie = movie;
 				System.out.println(" '" + movie.getTitle() + "' has been removed");
+				Movie.decreaseCount();
 				found = true;
 			}
 		}
