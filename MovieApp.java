@@ -3,10 +3,20 @@ package a01_Item_List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This class runs the movie app
+ * 
+ * @author Brittanie Pham
+ *
+ */
 public class MovieApp {
 	
 	static ArrayList<Movie> movies = new ArrayList<>();
 	
+	/**
+	 * main method to run the app
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
@@ -23,6 +33,10 @@ public class MovieApp {
 		menu(input);
 	}
 	
+	/**
+	 * prints the menu with options for the user to choose from
+	 * @param input passed to selection method to allow for user to choose what they want to do
+	 */
 	private static void menu(Scanner input) {
 		System.out.println();
 		System.out.println("1. Display all movies");
@@ -35,6 +49,11 @@ public class MovieApp {
 		selection(input, movies);	
 	}
 	
+	/**
+	 * depending on what the user chooses from the menu, this directs them to that specific objective
+	 * @param input user's input to choose what they want to do from the menu options
+	 * @param movies array list of movies 
+	 */
 	private static void selection(Scanner input, ArrayList<Movie> movies) {
 		System.out.println("Enter your selection");
 		int number = input.nextInt();
@@ -69,6 +88,10 @@ public class MovieApp {
 		}
 	}
 	
+	/**
+	 * shows all of the movies currently in the array list
+	 * @param movies array list of movies
+	 */
 	private static void displayAll(ArrayList<Movie> movies) {
 		System.out.println("----------------------------------------------------------------------------");
 		for (Movie movie: movies) {
@@ -77,6 +100,9 @@ public class MovieApp {
 		System.out.println("----------------------------------------------------------------------------");
 	}
 	
+	/**
+	 * allows use to add a movie to the array list named movies
+	 */
 	private static void addMovie() {
 		Scanner input2 = new Scanner(System.in);
 		
@@ -93,6 +119,10 @@ public class MovieApp {
 		
 	}
 	
+	/**
+	 * allows the user to find a specific movie from the movies array list by the id.
+	 * @param input the id of the movie the user wants to find
+	 */
 	private static void findMovie(Scanner input) {
 		System.out.println("Please enter the id of the movie you want to find: ");
 		int id = input.nextInt();
@@ -102,6 +132,10 @@ public class MovieApp {
 		}
 	}
 	
+	/**
+	 * allows the user to delete a specific movie from the movies array list by the id.
+	 * @param input the id of the movie the user wants to delete
+	 */
 	private static void deleteMovie(Scanner input) {
 		System.out.println("Please enter the id of the movie you want to delete: ");
 		Movie currentMovie = null;
@@ -121,6 +155,9 @@ public class MovieApp {
 		movies.remove(currentMovie);
 	}
 	
+	/**
+	 * returns the total number of movies in the movie array list
+	 */
 	private static void movieCount() {
 		System.out.println("Number of movies: " + Movie.getCount());
 	}
