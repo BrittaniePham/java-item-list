@@ -107,23 +107,15 @@ public class MovieApp {
 		Movie currentMovie = null;
 		boolean found = false;
 		int id = input.nextInt();
-		//found variable set to true and false. use false outside of the loop
 		for (Movie movie: movies) {
 			if(movie.getId() == id) {
 				currentMovie = movie;
 				System.out.println(" '" + movie.getTitle() + "' has been removed");
 				found = true;
-				break;
 			}
-//			if(movie.getId() != id) {
-//				System.out.println("The id " + id + " could not be found");
-////			menu(input);
-//				continue;
-//			}
 		}
 		if(found == false) {
 			System.out.println("The id " + id + " could not be found");
-//		menu(input);
 		}
 		movies.remove(currentMovie);
 	}

@@ -6,7 +6,7 @@ public class Movie {
 	private String title;
 	private String genre;
 	private int year;
-	private int id;
+	private final int id;
 	private static int count = 0;
 	
 	//constructor
@@ -44,10 +44,6 @@ public class Movie {
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 	
 	public static int getCount() {
