@@ -105,18 +105,25 @@ public class MovieApp {
 	private static void deleteMovie(Scanner input) {
 		System.out.println("Please enter the id of the movie you want to delete: ");
 		Movie currentMovie = null;
+		boolean found = false;
 		int id = input.nextInt();
+		//found variable set to true and false. use false outside of the loop
 		for (Movie movie: movies) {
 			if(movie.getId() == id) {
 				currentMovie = movie;
 				System.out.println(" '" + movie.getTitle() + "' has been removed");
+				found = true;
 				break;
 			}
-//			} else if(movie.getId() != id) {
+//			if(movie.getId() != id) {
 //				System.out.println("The id " + id + " could not be found");
-////				menu(input);
-//				break;
+////			menu(input);
+//				continue;
 //			}
+		}
+		if(found == false) {
+			System.out.println("The id " + id + " could not be found");
+//		menu(input);
 		}
 		movies.remove(currentMovie);
 	}
