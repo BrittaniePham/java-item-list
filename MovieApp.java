@@ -55,36 +55,42 @@ public class MovieApp {
 	 * @param movies array list of movies 
 	 */
 	private static void selection(Scanner input, ArrayList<Movie> movies) {
-		System.out.println("Enter your selection");
-		int number = input.nextInt();
-		switch (number) {
-		case 1:
-			displayAll(movies);
-			menu(input);
-			break;
-		case 2:
-			addMovie();
-			menu(input);
-			break;
-		case 3:
-			findMovie(input);
-			menu(input);
-			break;
-		case 4:
-			deleteMovie(input);
-			menu(input);
-			break;
-		case 5:
-			movieCount();
-			menu(input);
-			break;
-		case 6:
-			System.out.println("goodbye");
-			break;
-		default:
-			System.out.println("Invalid choice, try again");
-			System.out.println();
-			selection(input, movies);
+		if (input.hasNextInt()) { //TODO
+			System.out.println("Enter your selection");
+			int number = input.nextInt();
+			switch (number) {
+			case 1:
+				displayAll(movies);
+				menu(input);
+				break;
+			case 2:
+				addMovie();
+				menu(input);
+				break;
+			case 3:
+				findMovie(input);
+				menu(input);
+				break;
+			case 4:
+				deleteMovie(input);
+				menu(input);
+				break;
+			case 5:
+				movieCount();
+				menu(input);
+				break;
+			case 6:
+				System.out.println("goodbye");
+				break;
+			default:
+				System.out.println("Invalid choice, try again");
+				System.out.println();
+				selection(input, movies);
+			}
+		}
+		else{
+			System.out.println("Invalid selection");
+//			menu(input);
 		}
 	}
 	
@@ -104,6 +110,7 @@ public class MovieApp {
 	 * allows use to add a movie to the array list named movies
 	 */
 	private static void addMovie() {
+		@SuppressWarnings("resource")
 		Scanner input2 = new Scanner(System.in);
 		
 		System.out.println("Name: ");
@@ -125,10 +132,14 @@ public class MovieApp {
 	 */
 	private static void findMovie(Scanner input) {
 		System.out.println("Please enter the id of the movie you want to find: ");
+		boolean found = false; 
 		int id = input.nextInt();
 		for (Movie movie: movies) {
 			if(movie.getId() == id)
 			System.out.println(movie);
+		}
+		if(found == false) { 
+			System.out.println("The id " + id + " could not be found");
 		}
 	}
 	
